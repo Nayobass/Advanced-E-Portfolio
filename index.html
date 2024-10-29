@@ -4,11 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="index.js"></script>
     <script
       src="https://kit.fontawesome.com/5014c86bf5.js"
       crossorigin="anonymous"
     ></script>
     <title>Nayib Gonzalez</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init(
+        "Z0r0aGhGRRmAzdpCv");
+   })();
+</script>
   </head>
   <body>
     <section id="landing-page">
@@ -85,6 +95,66 @@
       <a href="#projects" class="scroll">
         <div class="scroll__icon click"></div>
       </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+            <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer.</h4>
+            <p class="modal__para">I'm a 32 year-old <b class="cyan">frontend software engineer</b> with passion and drive for developing websites with great <b class="cyan">user experiences.</b>
+                <br>
+                I strive as a creative person with musical background with a keen interest into anything creative like, for instance, developing <b class="cyan">great designs</b> for websites and make it <b class="cyan">appealing</b> for users.
+            </p>
+            <div class="modal__languages">
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="./assets/HTMLicon.png" alt="">
+                    <span class="language__name">HTML</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="./assets/CSSicon.png" alt="">
+                    <span class="language__name">CSS</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="./assets/JavaScript.png" alt="">
+                    <span class="language__name">Javascript</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="./assets/React.png" alt="">
+                    <span class="language__name">React</span>
+                </figure>
+            </div>
+        </div>
+        <div class="modal__half modal__contact">
+            <h3 class="modal__title modal__title--contact">
+                Let's have a chat!
+            </h3>
+            <h3 class="modal__sub-title modal__sub-title--contact">
+                Available to work!
+            </h3>
+            <form id="contact__form" onsubmit="contact(event)">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input class="input" name="user_name" type="text"></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Email</label>
+                    <input class="input" name="user_email" type="email"></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea class="input" name="message" type="text"></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">
+                    Send it my way
+                </button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for the message! Looking forward speaking to you soon!
+            </div>
+        </div>
+        <i class="fas fa-times modal__exit click"></i>
+      </div>
     </section>
     <section id="projects">
       <div class="container">
@@ -101,27 +171,25 @@
                   alt=""
                 />
                 <div class="project__wrapper--bg"></div>
-                  <div class="project__description">
-                    <h3 class="project__description--title">
-                      Car Sales Project
-                    </h3>
-                    <h4 class="project__description--sub-title">
-                      HTML, CSS, Javascript
-                    </h4>
-                    <p class="project__description--para">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Expedita in obcaecati tempore voluptate soluta odio totam
-                      magni aperiam est ea delectus beatae, minima sapiente a
-                      vitae provident iusto ipsa sint!
-                    </p>
-                    <div class="project__description--links">
-                      <a href="#" class="project__description--link">
-                        <i class="fa-brands fa-github"></i>
-                      </a>
-                      <a href="#" class="project__description--link">
-                        <i class="fas fa-link"></i>
-                      </a>
-                    </div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Car Sales Project</h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, Javascript
+                  </h4>
+                  <p class="project__description--para">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Expedita in obcaecati tempore voluptate soluta odio totam
+                    magni aperiam est ea delectus beatae, minima sapiente a
+                    vitae provident iusto ipsa sint!
+                  </p>
+                  <div class="project__description--links">
+                    <a href="#" class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -133,27 +201,25 @@
                   alt=""
                 />
                 <div class="project__wrapper--bg"></div>
-                  <div class="project__description">
-                    <h3 class="project__description--title">
-                      Car Sales Project
-                    </h3>
-                    <h4 class="project__description--sub-title">
-                      HTML, CSS, Javascript
-                    </h4>
-                    <p class="project__description--para">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Expedita in obcaecati tempore voluptate soluta odio totam
-                      magni aperiam est ea delectus beatae, minima sapiente a
-                      vitae provident iusto ipsa sint!
-                    </p>
-                    <div class="project__description--links">
-                      <a href="#" class="project__description--link">
-                        <i class="fa-brands fa-github"></i>
-                      </a>
-                      <a href="#" class="project__description--link">
-                        <i class="fas fa-link"></i>
-                      </a>
-                    </div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Car Sales Project</h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, Javascript
+                  </h4>
+                  <p class="project__description--para">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Expedita in obcaecati tempore voluptate soluta odio totam
+                    magni aperiam est ea delectus beatae, minima sapiente a
+                    vitae provident iusto ipsa sint!
+                  </p>
+                  <div class="project__description--links">
+                    <a href="#" class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -165,27 +231,25 @@
                   alt=""
                 />
                 <div class="project__wrapper--bg"></div>
-                  <div class="project__description">
-                    <h3 class="project__description--title">
-                      Car Sales Project
-                    </h3>
-                    <h4 class="project__description--sub-title">
-                      HTML, CSS, Javascript
-                    </h4>
-                    <p class="project__description--para">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Expedita in obcaecati tempore voluptate soluta odio totam
-                      magni aperiam est ea delectus beatae, minima sapiente a
-                      vitae provident iusto ipsa sint!
-                    </p>
-                    <div class="project__description--links">
-                      <a href="#" class="project__description--link">
-                        <i class="fa-brands fa-github"></i>
-                      </a>
-                      <a href="#" class="project__description--link">
-                        <i class="fas fa-link"></i>
-                      </a>
-                    </div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Car Sales Project</h3>
+                  <h4 class="project__description--sub-title">
+                    HTML, CSS, Javascript
+                  </h4>
+                  <p class="project__description--para">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Expedita in obcaecati tempore voluptate soluta odio totam
+                    magni aperiam est ea delectus beatae, minima sapiente a
+                    vitae provident iusto ipsa sint!
+                  </p>
+                  <div class="project__description--links">
+                    <a href="#" class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="project__description--link">
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -193,5 +257,43 @@
         </div>
       </div>
     </section>
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <figure>
+            <img class="footer__logo--img" src="./assets/logonayo.png" alt="" />
+          </figure>
+          <div class="footer__social--list">
+            <a
+              href="https://github.com/nayobass"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Github
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nayib-gonz%C3%A1lez-32885a97/"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="mailto:basstrombone313@gmail.com"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Email
+            </a>
+            <a
+              href="./assets/Nayib Resumé 2024.pdf"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Resume
+            </a>
+          </div>
+          <div class="footer__copyright">
+            Copyright &copy; 2024 Nayib González
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
